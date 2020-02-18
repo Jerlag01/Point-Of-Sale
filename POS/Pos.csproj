@@ -65,13 +65,39 @@
     <Compile Include="Services\Web\WebService.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Views\ConfigurationAddCatergoryControlView.xaml.cs" />
-    <Compile Include="Views\ConfigurationAddProductControlView.xaml.cs" />
-    <Compile Include="Views\ConfigurationConfigurationPageView.xaml.cs" />
-    <Compile Include="Views\ConfigurationEditCategoryControlView.xaml.cs" />
-    <Compile Include="Views\ConfigurationEditProductControlView.xaml.cs" />
-    <Compile Include="Views\ConfigurationProductsControlView.xaml.cs" />
-    <Compile Include="Views\ConfigurationUserRightsControlView.xaml.cs" />
+    <Compile Include="Views\configuration\ConfigurationAddCatergoryControlView.xaml.cs" />
+    <Compile Include="Views\configuration\ConfigurationAddProductControlView.xaml.cs" />
+    <Compile Include="Views\configuration\ConfigurationConfigurationPageView.xaml.cs" />
+    <Compile Include="Views\configuration\ConfigurationEditCategoryControlView.xaml.cs" />
+    <Compile Include="Views\configuration\ConfigurationEditProductControlView.xaml.cs" />
+    <Compile Include="Views\configuration\ConfigurationProductsControlView.xaml.cs" />
+    <Compile Include="Views\configuration\ConfigurationUserRightsControlView.xaml.cs" />
+    <Compile Include="Views\CustomControls\CustomControlsTouchButtonControl.xaml.cs" />
+    <Compile Include="Views\CustomControls\CustomControlsTouchMoneyKeypadControl.xaml.cs" />
+    <Compile Include="Views\CustomControls\CustomControlsTouchProductButtonControl.xaml.cs" />
+    <Compile Include="Views\CustomControls\CustomControlsTouchRadioButtonControl.xaml.cs" />
+    <Compile Include="Views\newmembercard\NewMembercardChangeMemberDetailsControlView.xaml.cs" />
+    <Compile Include="Views\newmembercard\NewMembercardExistingMembercardControlView.xaml.cs" />
+    <Compile Include="Views\newmembercard\NewMembercardLostMembercardControlView.xaml.cs" />
+    <Compile Include="Views\newmembercard\NewMembercardNewMembercardControlView.xaml.cs" />
+    <Compile Include="Views\newmembercard\NewMembercardNewMembercardPageView.xaml.cs" />
+    <Compile Include="Views\newmembercard\NewMembercardPrintUnprintedNFCCardsControlView.xaml.cs" />
+    <Compile Include="Views\newmembercard\NewMembercardPrintUnprintedNormalCardsControlView.xaml.cs" />
+    <Compile Include="Views\newticket\NewTicketCloseCheckoutSheetPageView.xaml.cs" />
+    <Compile Include="Views\newticket\NewTicketNewCheckoutSheetPageView.xaml.cs" />
+    <Compile Include="Views\newticket\NewTicketNewTicketPageView.xaml.cs" />
+    <Compile Include="Views\newticket\NewTicketPaymentByCardControlView.xaml.cs" />
+    <Compile Include="Views\newticket\NewTicketPaymentByCashControlView.xaml.cs" />
+    <Compile Include="Views\newticket\NewTicketPaymentByCoinControlView.xaml.cs" />
+    <Compile Include="Views\newticket\NewTicketPaymentByHouseControlView.xaml.cs" />
+    <Compile Include="Views\newticket\NewTicketPaymentPageView.xaml.cs" />
+    <Compile Include="Views\newticket\NewTicketTicketControl.xaml.cs" />
+    <Compile Include="Views\newticket\NewTicketTransactionControl.xaml.cs" />
+    <Compile Include="Views\reports\ReportsDailyOverviewControlView.xaml.cs" />
+    <Compile Include="Views\reports\ReportsDailyTicketOverviewControlView.xaml.cs" />
+    <Compile Include="Views\reports\ReportsMemberListCardsControlView.xaml.cs" />
+    <Compile Include="Views\reports\ReportsMemberListControlView.xaml.cs" />
+    <Compile Include="Views\reports\ReportsReportsPageView.xaml.cs" />
     <None Include="..\.editorconfig">
       <Link>.editorconfig</Link>
     </None>
@@ -209,11 +235,6 @@
     <Folder Include="Helpers\" />
     <Folder Include="resources\" />
     <Folder Include="ViewModels\" />
-    <Folder Include="Views\configuration\" />
-    <Folder Include="Views\CustomControls\" />
-    <Folder Include="Views\newmembercard\" />
-    <Folder Include="Views\newticket\" />
-    <Folder Include="Views\reports\" />
     <Folder Include="Views\settings\" />
     <Folder Include="XamlGeneratedNamespace\" />
   </ItemGroup>
