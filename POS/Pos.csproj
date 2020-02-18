@@ -81,45 +81,46 @@
     <Compile Include="ViewModels\SplashScreenViewModel.cs" />
     <Compile Include="ViewModels\TicketViewModel.cs" />
     <Compile Include="ViewModels\TransactionViewModel.cs" />
-    <Compile Include="Views\Configuration\AddCatergoryControlView.xaml.cs" />
-    <Compile Include="Views\Configuration\AddProductControlView.xaml.cs" />
+    <Compile Include="Views\Configuration\AddCatergoryControlView.cs" />
+    <Compile Include="Views\Configuration\AddProductControlView.cs" />
     <Compile Include="Views\Configuration\PageView.xaml.cs" />
-    <Compile Include="Views\Configuration\EditCategoryControlView.xaml.cs" />
-    <Compile Include="Views\Configuration\EditProductControlView.xaml.cs" />
-    <Compile Include="Views\Configuration\ProductsControlView.xaml.cs" />
-    <Compile Include="Views\Configuration\UserRightsControlView.xaml.cs" />
-    <Compile Include="Views\CustomControls\TouchButtonControl.xaml.cs" />
-    <Compile Include="Views\CustomControls\TouchMoneyKeypadControl.xaml.cs" />
-    <Compile Include="Views\CustomControls\TouchProductButtonControl.xaml.cs" />
-    <Compile Include="Views\CustomControls\TouchRadioButtonControl.xaml.cs" />
-    <Compile Include="Views\NewMembercard\ChangeMemberDetailsControlView.xaml.cs" />
-    <Compile Include="Views\NewMembercard\ExistingMembercardControlView.xaml.cs" />
-    <Compile Include="Views\NewMembercard\LostMembercardControlView.xaml.cs" />
-    <Compile Include="Views\NewMembercard\NewMembercardControlView.xaml.cs" />
-    <Compile Include="Views\NewMembercard\NewMembercardPageView.xaml.cs" />
-    <Compile Include="Views\NewMembercard\PrintUnprintedNFCCardsControlView.xaml.cs" />
-    <Compile Include="Views\NewMembercard\PrintUnprintedNormalCardsControlView.xaml.cs" />
-    <Compile Include="Views\NewTicket\CloseCheckoutSheetPageView.xaml.cs" />
-    <Compile Include="Views\NewTicket\NewCheckoutSheetPageView.xaml.cs" />
-    <Compile Include="Views\NewTicket\NewTicketPageView.xaml.cs" />
-    <Compile Include="Views\NewTicket\PaymentByCardControlView.xaml.cs" />
-    <Compile Include="Views\NewTicket\PaymentByCashControlView.xaml.cs" />
-    <Compile Include="Views\NewTicket\PaymentByCoinControlView.xaml.cs" />
-    <Compile Include="Views\NewTicket\PaymentByHouseControlView.xaml.cs" />
-    <Compile Include="Views\NewTicket\PaymentPageView.xaml.cs" />
-    <Compile Include="Views\NewTicket\TicketControl.xaml.cs" />
-    <Compile Include="Views\NewTicket\TransactionControl.xaml.cs" />
-    <Compile Include="Views\Reports\DailyOverviewControlView.xaml.cs" />
-    <Compile Include="Views\Reports\DailyTicketOverviewControlView.xaml.cs" />
-    <Compile Include="Views\Reports\MemberListCardsControlView.xaml.cs" />
-    <Compile Include="Views\Reports\MemberListControlView.xaml.cs" />
-    <Compile Include="Views\Reports\ReportsPageView.xaml.cs" />
-    <Compile Include="Views\Settings\ApplicationConfigControlView.xaml.cs" />
-    <Compile Include="Views\Settings\DbConfigControlView.xaml.cs" />
-    <Compile Include="Views\Settings\IOConfigControlView.xaml.cs" />
-    <Compile Include="Views\Settings\MailConfigControlView.xaml.cs" />
-    <Compile Include="Views\Settings\MembercardConfigControlView.xaml.cs" />
-    <Compile Include="Views\Settings\SettingsPageView.xaml.cs" />
+    <Compile Include="Views\Configuration\EditCategoryControlView.cs" />
+    <Compile Include="Views\Configuration\EditProductControlView.cs" />
+    <Compile Include="Views\Configuration\ProductsControlView.cs" />
+    <Compile Include="Views\Configuration\UserRightsControlView.cs" />
+    <Compile Include="Views\CustomControls\ListBoxScroll.cs" />
+    <Compile Include="Views\CustomControls\TouchButtonControl.cs" />
+    <Compile Include="Views\CustomControls\TouchMoneyKeypadControl.cs" />
+    <Compile Include="Views\CustomControls\TouchProductButtonControl.cs" />
+    <Compile Include="Views\CustomControls\TouchRadioButtonControl.cs" />
+    <Compile Include="Views\NewMembercard\ChangeMemberDetailsControlView.cs" />
+    <Compile Include="Views\NewMembercard\ExistingMembercardControlView.cs" />
+    <Compile Include="Views\NewMembercard\LostMembercardControlView.cs" />
+    <Compile Include="Views\NewMembercard\NewMembercardControlView.cs" />
+    <Compile Include="Views\NewMembercard\NewMembercardPageView.cs" />
+    <Compile Include="Views\NewMembercard\PrintUnprintedNFCCardsControlView.cs" />
+    <Compile Include="Views\NewMembercard\PrintUnprintedNormalCardsControlView.cs" />
+    <Compile Include="Views\NewTicket\CloseCheckoutSheetPageView.cs" />
+    <Compile Include="Views\NewTicket\NewCheckoutSheetPageView.cs" />
+    <Compile Include="Views\NewTicket\NewTicketPageView.cs" />
+    <Compile Include="Views\NewTicket\PaymentByCardControlView.cs" />
+    <Compile Include="Views\NewTicket\PaymentByCashControlView.cs" />
+    <Compile Include="Views\NewTicket\PaymentByCoinControlView.cs" />
+    <Compile Include="Views\NewTicket\PaymentByHouseControlView.cs" />
+    <Compile Include="Views\NewTicket\PaymentPageView.cs" />
+    <Compile Include="Views\NewTicket\TicketControl.cs" />
+    <Compile Include="Views\NewTicket\TransactionControl.cs" />
+    <Compile Include="Views\Reports\DailyOverviewControlView.cs" />
+    <Compile Include="Views\Reports\DailyTicketOverviewControlView.cs" />
+    <Compile Include="Views\Reports\MemberListCardsControlView.cs" />
+    <Compile Include="Views\Reports\MemberListControlView.cs" />
+    <Compile Include="Views\Reports\ReportsPageView.cs" />
+    <Compile Include="Views\Settings\ApplicationConfigControlView.cs" />
+    <Compile Include="Views\Settings\DbConfigControlView.cs" />
+    <Compile Include="Views\Settings\IOConfigControlView.cs" />
+    <Compile Include="Views\Settings\MailConfigControlView.cs" />
+    <Compile Include="Views\Settings\MembercardConfigControlView.cs" />
+    <Compile Include="Views\Settings\SettingsPageView.cs" />
     <None Include="..\.editorconfig">
       <Link>.editorconfig</Link>
     </None>
@@ -127,6 +128,74 @@
     <None Include="packages.config" />
     <None Include="pcsc-sharp.dll.config" />
     <Compile Include="Services\Web\Domain\MemberResponse.cs" />
+    <Page Include="Views\Configuration\AddProductControView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Configuration\ConfigurationPageView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Configuration\EditCategoryControView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Configuration\EditProductControlView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Configuration\ProductsControlView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Configuration\UserRightsControlView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\CustomControls\TouchButtonControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\CustomControls\TouchMoneyKeypadControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\CustomControls\TouchProductButtonControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\CustomControls\TouchRadioButtonControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\NewMembercard\ChangeMemberDetailsControlView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\NewMembercard\ExistingMembercardControlView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\NewMembercard\LostMembercardControlView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\NewMembercard\NewMembercardControlView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\NewMembercard\NewMembercardPageView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\NewMembercard\PrintUnprintedNFCCardsControlView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\NewMembercard\PrintUnprintedNormalCardsControlView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
@@ -310,7 +379,7 @@
     <Folder Include="XamlGeneratedNamespace\" />
   </ItemGroup>
   <ItemGroup>
-    <Page Include="Views\Configuration\addcategorycontrolview.xaml">
+    <Page Include="Views\Configuration\AddCategoryControlView.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>

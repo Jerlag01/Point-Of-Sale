@@ -1,0 +1,131 @@
+﻿<UserControl x:Class="Pos.Views.NewMembercard.ChangeMemberDetailsControlView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:viewModels="clr-namespace:Pos.ViewModels"
+             xmlns:model="clr-namespace:Dal.Model;assembly=Dal"
+             xmlns:p="clr-namespace:Pos.Properties"
+             xmlns:customControls="clr-namespace:Pos.Views.CustomControls"
+             xmlns:microMvvm="clr-namespace:Util.MicroMvvm;assembly=Util">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="35"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <TextBlock Grid.Row="0" Style="{StaticResource WhiteText}" FontSize="30" FontWeight="Bold"
+               Text="{x:Static p:Resources.PageMembercardChangeMemberDetailsTitle}"/>
+        <Grid Row="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="35"/>
+                <RowDefinition Height="200"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="195"/>
+                <ColumnDefinition Width="200"/>
+            </Grid.ColumnDefinitions>
+            <TextBlock Grid.Column="0" Grid.Row="0" Style="{StaticResource WhiteText}"
+                 Text="{x:Static p:Resources.PageConfigurationUserRightsControlFilter}"/>
+            <TextBox Grid.Row="0" Grid.Column="1" Style="{StaticResource DarkTextBox}"
+               Text="{Binding UserFilter, UpdateSourceTrigger=PropertyChanged}"/>
+            <customControls:ListBoxScroll Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" ScrollViewer.VerticalScrollBarVisibility="Auto"
+                                    Background="Transparent" BorderBrush="Transparent" Foreground="White" BorderThickness="0"
+                                    HorizontalContentAlignment="Stretch"
+                                    microMvvm:SelectionBehavior.SelectionChanged="{Binding EditMemberUserSelectionChangedCommand}"
+                                    SelectedItem="{Binding SelectedUser, Mode=TwoWay}" ItemsSource="{Binding UserList}">
+                <ItemsControl.ItemContainerStyle>
+                    <Style TargetType="{x:Type ListBoxItem}">
+                        <Style.Triggers>
+                            <Trigger Property="ListBoxItem.IsSelected" Value="true">
+                                <Setter Property="Control.FontWeight" Value="Bold"/>
+                                <Setter Property="Control.Foreground" Value="Black"/>
+                            </Trigger>
+                        </Style.Triggers>
+                        <Style.Resources>
+                            <SolidColorBrush x:Key="{x:Static SystemColors.HighlightBrushKey}" Color="White"/>
+                            <SolidColorBrush x:Key="{x:Static SystemColors.InactiveSelectionHighlightBrushKey}" Color="White"/>
+                        </Style.Resources>
+                    </Style>
+                </ItemsControl.ItemContainerStyle>
+                <ItemsControl.ItemTemplate>
+                    <DataTemplate>
+                        <TextBlock FontSize="20" Margin="0,0" Text="{Binding Fullname}"/>
+                    </DataTemplate>
+                </ItemsControl.ItemTemplate>
+            </customControls:ListBoxScroll>
+        </Grid>
+        <Grid Row="3">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="35"/>
+                <RowDefinition Height="35"/>
+                <RowDefinition Height="35"/>
+                <RowDefinition Height="35"/>
+                <RowDefinition Height="35"/>
+                <RowDefinition Height="35"/>
+                <RowDefinition Height="35"/>
+                <RowDefinition Height="35"/>
+                <RowDefinition Height="35"/>
+                <RowDefinition Height="35"/>
+                <RowDefinition Height="35"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="195"/>
+                <ColumnDefinition Width="260"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <TextBlock Grid.Column="0" Grid.Row="0" Style="{StaticResource WhiteText}"
+                 Text="{x:Static p:Resources.PageNewMembercardFormFirstName}"/>
+            <TextBox Grid.Column="1" Grid.Row="0" Style="{StaticResource DarkTextBox}"
+               Text="{Binding SelectedUser.FirstName, UpdateSourceTrigger=LostFocus, ValidatesOnDataErrors=true, NotifyOnValidationError=true}"
+               IsReadOnly="{Binding IsReadOnly}"/>
+            <TextBlock Grid.Column="0" Grid.Row="1" Style="{StaticResource WhiteText}"
+                 Text="{x:Static p:Resources.PageNewMembercardFormName}"/>
+            <TextBox Grid.Column="1" Grid.Row="1" Style="{StaticResource DarkTextBox}"
+               Text="{Binding SelectedUser.LastName, UpdateSourceTrigger=LostFocus, ValidatesOnDataErrors=true, NotifyOnValidationError=true}"
+               IsReadOnly="{Binding IsReadOnly}"/>
+            <TextBlock Grid.Column="0" Grid.Row="2" Style="{StaticResource WhiteText}"
+                 Text="{x:Static p:Resources.PageNewMembercardFormAddress}"/>
+            <TextBox Grid.Column="1" Grid.Row="2" Style="{StaticResource DarkTextBox}"
+               Text="{Binding SelectedUser.Address, UpdateSourceTrigger=LostFocus, ValidatesOnDataErrors=true, NotifyOnValidationError=true}"
+               IsReadOnly="{Binding IsReadOnly}"/>
+            <TextBlock Grid.Column="0" Grid.Row="3" Style="{StaticResource WhiteText}"
+                 Text="{x:Static p:Resources.PageNewMembercardFormZipcode}"/>
+            <TextBox Grid.Column="1" Grid.Row="3" Style="{StaticResource DarkTextBox}"
+               Text="{Binding SelectedUser.ZipCode, UpdateSourceTrigger=LostFocus, ValidatesOnDataErrors=true, NotifyOnValidationError=true}"
+               IsReadOnly="{Binding IsReadOnly}"/>
+            <TextBlock Grid.Column="0" Grid.Row="4" Style="{StaticResource WhiteText}"
+                 Text="{x:Static p:Resources.PageNewMembercardFormCity}"/>
+            <TextBox Grid.Column="1" Grid.Row="4" Style="{StaticResource DarkTextBox}"
+               Text="{Binding SelectedUser.City, UpdateSourceTrigger=LostFocus, ValidatesOnDataErrors=true, NotifyOnValidationError=true}"
+               IsReadOnly="{Binding IsReadOnly}"/>
+            <TextBlock Grid.Column="0" Grid.Row="5" Style="{StaticResource WhiteText}"
+                 Text="{x:Static p:Resources.PageNewMembercardFormCountry}"/>
+            <TextBox Grid.Column="1" Grid.Row="5" Style="{StaticResource DarkTextBox}"
+               Text="{Binding SelectedUser.Country, UpdateSourceTrigger=LostFocus, ValidatesOnDataErrors=true, NotifyOnValidationError=true}"
+               IsReadOnly="{Binding IsReadOnly}"/>
+            <TextBlock Grid.Column="0" Grid.Row="6" Style="{StaticResource WhiteText}"
+                 Text="{x:Static p:Resources.PageNewMembercardFormBirthday}"/>
+            <DatePicker Grid.Column="1" Grid.Row="6" Style="{StaticResource DarkDatePicker}"
+                  SelectedDate="{Binding SelectedUser.BirthDate, ValidatesOnDataErrors=true, NotifyOnValidationError=true}"/>
+            <TextBlock Grid.Column="0" Grid.Row="7" Style="{StaticResource WhiteText}"
+                 Text="{x:Static p:Resources.PageNewMembercardFormGender}"/>
+            <ComboBox Grid.Column="1" Grid.Row="7" Style="{StaticResource ComboBoxFlatStyle}" SelectedValuePath="Tag"
+                SelectedValue="{Binding SelectedUser.Gender}">
+                <ItemsControl.Items>
+                    <ComboBoxItem Content="{x:Static p:Resources.GenderMale}" Tag="{x:Static model:Member+Genders.Male}"/>
+                    <ComboBoxItem Content="{x:Static p:Resources.GenderFemale}" Tag="{x:Static model:Member+Genders.Female}"/>
+                </ItemsControl.Items>
+            </ComboBox>
+            <TextBlock Grid.Column="0" Grid.Row="9" Style="{StaticResource WhiteText}"
+                 Text="{x:Static p:Resources.PageNewMembercardFormEmail}"/>
+            <TextBox Grid.Column="1" Grid.Row="9" Style="{StaticResource DarkTextBox}"
+               Text="{Binding SelectedUser.Email, UpdateSourceTrigger=LostFocus, ValidatesOnDataErrors=true, NotifyOnValidationError=true}"/>
+            <TextBlock Grid.Column="0" Grid.Row="10" Style="{StaticResource WhiteText}"
+                 Text="{x:Static p:Resources.PageNewMembercardFormPhone}"/>
+            <TextBox Grid.Column="1" Grid.Row="10" Style="{StaticResource DarkTextBox}"
+               Text="{Binding SelectedUser.TelephoneNr, UpdateSourceTrigger=LostFocus, ValidatesOnDataErrors=true, NotifyOnValidationError=true}"/>
+        </Grid>
+    </Grid>
+</UserControl>
