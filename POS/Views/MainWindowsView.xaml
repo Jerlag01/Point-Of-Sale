@@ -1,0 +1,125 @@
+﻿<Window x:Class="Tjok.Pos.Views.MainWindowView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:VM="clr-namespace:Pos.ViewModels"
+        xmlns:p="clr-namespace:Pos.Properties"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        Title="POS System" Height="1024" Width="1280" ResizeMode="NoResize"
+        WindowStartupLocation="CenterScreen" Background="#FF133455" WindowStyle="None"
+        Icon="../Resources/extension-icons_square_pos_2_1.png">
+    <Grid x:Name="BaseGrid" Height="1024" Width="1280">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="100"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid x:Name="MenuBarGrid" Row="0" ColumnSpan="2" Margin="4,4,4,0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="3*"/>
+                <ColumnDefinition Width="8*"/>
+            </Grid.ColumnDefinitions>
+            <Border Grid.Column="0" Background="White" Margin="4,4,4,4">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="70"/>
+                        <ColumnDefinition Width="110"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Image Grid.Column="0" Grid.Row="0" HorizontalAlignment="Left" VerticalAlignment="Center"
+                 Margin="10,5,5,5" Source="../Resources\user_black.png"/>
+                    <TextBlock Grid.Column="1" Grid.Row="0" HorizontalAlignment="Left" VerticalAlignment="Center" Width="120"
+                     FontSize="20" FontWeight="Bold" Text="{x:Static p:Resources.WindowMainCurrentUser}"/>
+                    <TextBlock Grid.Column="2" Grid.Row="0" HorizontalAlignment="Left" VerticalAlignment="Center" Width="210"
+                     FontSize="20" FontWeight="Bold" Text="{Binding AuthenticatedMember.Fullname}"/>
+                </Grid>
+            </Border>
+            <Border Grid.Column="1" Background="White" Margin="4,4,4,4">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <RadioButton GroupName="MenuItem" Grid.Column="0" Margin="4,4,2,4" Style="{StaticResource OrangeRadioButton}"
+                       IsChecked="True" Command="{Binding NavigateNewTicketPage}"
+                       Visibility="{Binding NewTicketButtonVisible}">
+                        <Grid>
+                            <Image HorizontalAlignment="Right" VerticalAlignment="Top" Height="35" Width="35" Margin="10"
+                     Source="../Resources\order.png"/>
+                            <TextBlock TextWrapping="Wrap" HorizontalAlignment="Left" VerticalAlignment="Bottom" Padding="7" Width="70"
+                         Text="{x:Static p:Resources.RadioButtonNewTicket}"/>
+                        </Grid>
+                    </RadioButton>
+                    <RadioButton GroupName="MenuItem" Grid.Column="1" Margin="2,4,2,4" Style="{StaticResource OrangeRadioButton}"
+                       Command="{Binding NavigateNewMemberPage}" Visibility="{Binding NewMembercardButtonVisible}">
+                        <Grid>
+                            <Image HorizontalAlignment="Right" VerticalAlignment="Top" Height="35" Width="35" Margin="10"
+                     Source="../Resources\user.png"/>
+                            <TextBlock TextWrapping="Wrap" HorizontalAlignment="Left" VerticalAlignment="Bottom" Padding="7" Width="101"
+                         Text="{x:Static p:Resources.RadioButtonNewMembercard}"/>
+                        </Grid>
+                    </RadioButton>
+                    <Button Grid.Row="0" Grid.Column="2" Margin="2,4,4,4" Style="{StaticResource BlueButton}"
+                  Command="{Binding OpenCashDrawer}" Visibility="{Binding OpenDrawerButtonVisible}">
+                        <Grid>
+                            <Image HorizontalAlignment="Right" VerticalAlignment="Top" Height="35" Width="35" Margin="10"
+                     Source="../Resources\opendrawer.png"/>
+                            <TextBlock TextWrapping="Wrap" HorizontalAlignment="Left" VerticalAlignment="Bottom" Padding="7" Width="70"
+                         Text="{x:Static p:Resources.RadioButtonOpenDrawer}"/>
+                        </Grid>
+                    </Button>
+                    <RadioButton GroupName="MenuItem" Grid.Column="4" Margin="2,4,2,4" Style="{StaticResource OrangeRadioButton}"
+                       Command="{Binding NavigateConfigurationPage}" Visibility="{Binding ConfigurationButtonVisible}">
+                        <Grid>
+                            <Image HorizontalAlignment="Right" VerticalAlignment="Top" Height="35" Width="35" Margin="10"
+                     Source="../Resources\confguration.png"/>
+                            <TextBlock TextWrapping="Wrap" HorizontalAlignment="Left" VerticalAlignment="Bottom" Padding="7" Width="73"
+                         Text="{x:Static p:Resources.RadioButtonConfiguration}"/>
+                        </Grid>
+                    </RadioButton>
+                    <RadioButton GroupName="MenuItem" Grid.Column="5" Margin="2,4,2,4" Style="{StaticResource OrangeRadioButton}"
+                       Command="{Binding NavigateReportingPage}" Visibility="{Binding ReportButtonVisible}">
+                        <Grid>
+                            <Image HorizontalAlignment="Right" VerticalAlignment="Top" Height="35" Width="35" Margin="10"
+                     Source="../Resources\graph.png"/>
+                            <TextBlock TextWrapping="Wrap" HorizontalAlignment="Left" VerticalAlignment="Bottom" Padding="7" Width="80"
+                         Text="{x:Static p:Resources.RadioButtonReports}"/>
+                        </Grid>
+                    </RadioButton>
+                    <RadioButton GroupName="MenuItem" Grid.Column="6" Margin="2,4,2,4" Style="{StaticResource OrangeRadioButton}"
+                       Command="{Binding NavigateSettingsPage}" Visibility="{Binding SettingsButtonVisible}">
+                        <Grid>
+                            <Image HorizontalAlignment="Right" VerticalAlignment="Top" Height="35" Width="35" Margin="10"
+                     Source="../Resources\settings.png"/>
+                            <TextBlock TextWrapping="Wrap" HorizontalAlignment="Left" VerticalAlignment="Bottom" Padding="7" Width="80"
+                         Text="{x:Static p:Resources.RadioButtonSettings}"/>
+                        </Grid>
+                    </RadioButton>
+                    <Button Grid.Row="0" Grid.Column="7" Margin="2,4,4,4" Style="{StaticResource RedButton}"
+                  Command="{Binding ExitApplication}">
+                        <Grid>
+                            <Image HorizontalAlignment="Right" VerticalAlignment="Top" Height="35" Width="35" Margin="10"
+                     Source="../Resources\standby.png"/>
+                            <TextBlock TextWrapping="Wrap" HorizontalAlignment="Left" VerticalAlignment="Bottom" Padding="7" Width="70"
+                         Text="{x:Static p:Resources.RadioButtonQuit}"/>
+                        </Grid>
+                    </Button>
+                </Grid>
+            </Border>
+        </Grid>
+        <Grid Row="1" Margin="4,0,4,4">
+            <Frame x:Name="MainFrame" NavigationUIVisibility="Hidden"/>
+        </Grid>
+    </Grid>
+</Window>

@@ -1,0 +1,31 @@
+﻿<Window x:Class="Pos.Views.SplashScreenView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:VM="clr-namespace:Pos.ViewModels"
+        Title="SplashView" WindowStartupLocation="CenterScreen" AllowsTransparency="true"
+        WindowStyle="None" Height="1024" Width="1280" ResizeMode="NoResize" Topmost="true"
+        ShowInTaskbar="false">
+    <Control.Background>
+        <SolidColorBrush Opacity="0.1" Color="White"/>
+    </Control.Background>
+    <FrameworkElement.DataContext>
+        <VM:SplashScreenViewModel/>
+    </FrameworkElement.DataContext>
+    <Grid Height="1024" Width="1280">
+        <Image x:Name="ImgBrush" Source="/Pos;component/Resources/background.jpg" Stretch="Fill">
+            <FrameworkElement.Triggers>
+                <EventTrigger RoutedEvent="Image.Loaded">
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <DoubleAnimation x:Name="FadeIn" Storyboard.TargetName="ImgBrush" Storyboard.TargetProperty="Opacity" From="0.1"
+                                             To="1" Duration="0:0:1"/>
+                        </Storyboard>
+                    </BeginStoryboard>
+                </EventTrigger>
+            </FrameworkElement.Triggers>
+        </Image>
+        <TextBlock Text="Tjok POS System" Margin="725,910,0,0" Foreground="White" FontSize="36"/>
+        <TextBlock Margin="725,950,0,0" Foreground="White" FontSize="36" Text="{Binding SplashScreenText}"/>
+        <Image Source="/Pos;component/Resources/logo_trans_white.png" Stretch="None" Margin="725,40,40,694"/>
+    </Grid>
+</Window>

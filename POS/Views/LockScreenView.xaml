@@ -1,0 +1,30 @@
+﻿<Window x:Class="Pos.Views.LockScreenView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:VM="clr-namespace:Pos.ViewModels"
+        xmlns:p="clr-namespace:Pos.Properties"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        Title="SplashView" WindowStartupLocation="CenterScreen" AllowsTransparency="true"
+        WindowStyle="None" Height="1024" Width="1280" ResizeMode="NoResize" Topmost="true"
+        ShowInTaskbar="false">
+    <FrameworkElement.DataContext>
+        <VM:MainWindowViewModel/>
+    </FrameworkElement.DataContext>
+    <Control.Background>
+        <SolidColorBrush Opacity="0.8" Color="Black"/>
+    </Control.Background>
+    <Grid Height="1024" Width="1280">
+        <Button Grid.Row="0" Height="80" Width="107" Margin="1161,12,12,932" Style="{StaticResource RedButton}"
+                Command="{Binding ExitApplication}">
+            <Grid>
+                <Image HorizontalAlignment="Right" VerticalAlignment="Top" Height="35" Width="35" Margin="10"
+                       Source="../Resources\standby.png"/>
+                <TextBlock TextWrapping="Wrap" HorizontalAlignment="Left" VerticalAlignment="Bottom" Padding="7" Width="70"
+                           Text="{x:Static p:Resources.RadioButtonQuit}"/>
+            </Grid>
+        </Button>
+        <TextBlock Text="{x:Static p:Resources.LockScreenText}" HorizontalAlignment="Center"
+                   VerticalAlignment="Center" Foreground="White" FontSize="36"/>
+    </Grid>
+</Window>

@@ -1,0 +1,777 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="PageConfigurationEditCategoryControlTitle" xml:space="preserve">
+    <value>EDIT CATEGORY</value>
+  </data>
+  <data name="MailCheckoutSheetContent" xml:space="preserve">
+    <value>Please find the checkout sheet attached to this mail. You can open the attachement with Adobe PDF reader</value>
+  </data>
+  <data name="SplashScreenLoadingProducts" xml:space="preserve">
+    <value>Loading products...</value>
+  </data>
+  <data name="PageSettingsMenuDbConfig" xml:space="preserve">
+    <value>DB settings</value>
+  </data>
+  <data name="PageSettingsDbNote" xml:space="preserve">
+    <value>NOTE: Application must be restarted before the changes are applied.</value>
+  </data>
+  <data name="PageSettingsMemberCardStartDate" xml:space="preserve">
+    <value>Membercard starting date:</value>
+  </data>
+  <data name="ButtonHideCategory" xml:space="preserve">
+    <value>Hide category</value>
+  </data>
+  <data name="PageConfigurationAddCategoryControlFormImagePath" xml:space="preserve">
+    <value>Image path: </value>
+  </data>
+  <data name="PageSettingsEidReader" xml:space="preserve">
+    <value>EID card reader:</value>
+  </data>
+  <data name="ButtonReportExport" xml:space="preserve">
+    <value>Export report</value>
+  </data>
+  <data name="PageNewMembercardFormBirthday" xml:space="preserve">
+    <value>Birthday:</value>
+  </data>
+  <data name="ButtonDeleteProduct" xml:space="preserve">
+    <value>Delete product</value>
+  </data>
+  <data name="PageReportsMenuMemberListCards" xml:space="preserve">
+    <value>Membercards per user</value>
+  </data>
+  <data name="PageSettingsMenuMailConfig" xml:space="preserve">
+    <value>Mail settings</value>
+  </data>
+  <data name="PageSettingsAuthTimeout" xml:space="preserve">
+    <value>Authentication timeout (ms):</value>
+  </data>
+  <data name="PageSettingsCardPrinter" xml:space="preserve">
+    <value>Card printer:</value>
+  </data>
+  <data name="MessageEmptyTicketTitle" xml:space="preserve">
+    <value>Empty ticket</value>
+  </data>
+  <data name="PageNewMembercardPrintedQuestion" xml:space="preserve">
+    <value>Has the card been correctly printed?</value>
+  </data>
+  <data name="PageNewMembercardFormGender" xml:space="preserve">
+    <value>Gender:</value>
+  </data>
+  <data name="ButtonOpenCheckoutSheet" xml:space="preserve">
+    <value>Open cash register</value>
+  </data>
+  <data name="PageConfigurationProductsCategoryContainsProductsTitle" xml:space="preserve">
+    <value>Selected category contains products</value>
+  </data>
+  <data name="PageReportsMenuDailyOverview" xml:space="preserve">
+    <value>Daily overview</value>
+  </data>
+  <data name="PageNewMembercardPrintUnprintedNormalCardsTitle" xml:space="preserve">
+    <value>PRINT UNPRINTE CARDS</value>
+  </data>
+  <data name="PagePaymentChange" xml:space="preserve">
+    <value>Change</value>
+  </data>
+  <data name="PageSettingsDbInstance" xml:space="preserve">
+    <value>Database instance:</value>
+  </data>
+  <data name="ButtonEditItem" xml:space="preserve">
+    <value>Edit item</value>
+  </data>
+  <data name="PageReportMemberActive" xml:space="preserve">
+    <value>Active members:</value>
+  </data>
+  <data name="PageReportsPreview" xml:space="preserve">
+    <value>Report preview</value>
+  </data>
+  <data name="ButtonReadEid" xml:space="preserve">
+    <value>Read eID</value>
+  </data>
+  <data name="RadioButtonReports" xml:space="preserve">
+    <value>REPORTS</value>
+  </data>
+  <data name="QuestionConfirmDeleteOrder" xml:space="preserve">
+    <value>Are you sure you want to delete this order?</value>
+  </data>
+  <data name="PageSettingsDbTitle" xml:space="preserve">
+    <value>DATABASE SETTINGS</value>
+  </data>
+  <data name="ButtonCloseRegister" xml:space="preserve">
+    <value>Close cash register</value>
+  </data>
+  <data name="PageReportsFilters" xml:space="preserve">
+    <value>Report filters</value>
+  </data>
+  <data name="PagePaymentTitle" xml:space="preserve">
+    <value>PAYMENT</value>
+  </data>
+  <data name="PageNewMembercardPrintUnprintedNormalCardsOverview" xml:space="preserve">
+    <value>Unprinted card overview</value>
+  </data>
+  <data name="ExceptionFileNotFound" xml:space="preserve">
+    <value>A file was not found: </value>
+  </data>
+  <data name="PageNewMembercardFormAddress" xml:space="preserve">
+    <value>Address:</value>
+  </data>
+  <data name="MessageOpenTickets" xml:space="preserve">
+    <value>Please close all open tickets before closing the cash register.</value>
+  </data>
+  <data name="PageConfigurationAddCategoryControlCreateCategory" xml:space="preserve">
+    <value>Create new category</value>
+  </data>
+  <data name="ButtonGenerateCard" xml:space="preserve">
+    <value>Generate card</value>
+  </data>
+  <data name="PageNewMembercardFormName" xml:space="preserve">
+    <value>Name:</value>
+  </data>
+  <data name="PageNewMembercardFormCity" xml:space="preserve">
+    <value>City:</value>
+  </data>
+  <data name="MessageOpenTicketsTitle" xml:space="preserve">
+    <value>Open tickets</value>
+  </data>
+  <data name="PageSettingsNfcReader" xml:space="preserve">
+    <value>NFC card reader:</value>
+  </data>
+  <data name="MessageZeroPayedTitle" xml:space="preserve">
+    <value>Payment warning</value>
+  </data>
+  <data name="PageConfigurationAddProductControlHiddenProducts" xml:space="preserve">
+    <value>Hidden products</value>
+  </data>
+  <data name="ExceptionPrintingCard" xml:space="preserve">
+    <value>There was an error while printing the membercard. The card will be printed later manually by an administrator.</value>
+  </data>
+  <data name="RadioButtonPaymentMethodCard" xml:space="preserve">
+    <value>CARD</value>
+  </data>
+  <data name="RadioButtonPaymentMethodCash" xml:space="preserve">
+    <value>CASH</value>
+  </data>
+  <data name="RadioButtonPaymentMethodCoin" xml:space="preserve">
+    <value>COIN</value>
+  </data>
+  <data name="RadioButtonPaymentMethodFree" xml:space="preserve">
+    <value>FREE</value>
+  </data>
+  <data name="PageNewCheckoutSheetTitle" xml:space="preserve">
+    <value>OPEN CASH REGISTER</value>
+  </data>
+  <data name="QuestionConfirmDeleteOrderTitle" xml:space="preserve">
+    <value>Delete order?</value>
+  </data>
+  <data name="PageSettingsEmailFromAddress" xml:space="preserve">
+    <value>E-mail sender address:</value>
+  </data>
+  <data name="PagePaymentReason" xml:space="preserve">
+    <value>Reason: </value>
+  </data>
+  <data name="ExceptionPrintingCardTitle" xml:space="preserve">
+    <value>Problem printing membercard</value>
+  </data>
+  <data name="ExceptionDbWarning" xml:space="preserve">
+    <value>Database warning:</value>
+  </data>
+  <data name="ButtonEditCategory" xml:space="preserve">
+    <value>Edit category</value>
+  </data>
+  <data name="PageNewMembercardMenuExisting" xml:space="preserve">
+    <value>Existing member</value>
+  </data>
+  <data name="PageCloseCheckoutSheetFormTotalAmount" xml:space="preserve">
+    <value>Total in register:</value>
+  </data>
+  <data name="PageSettingsMailTitle" xml:space="preserve">
+    <value>MAIL SETTINGS</value>
+  </data>
+  <data name="PageConfigurationProductsProductConfirmHideTitle" xml:space="preserve">
+    <value>Confirm product hide</value>
+  </data>
+  <data name="PageSettingsApplicationTitle" xml:space="preserve">
+    <value>APPLICATION SETTINGS</value>
+  </data>
+  <data name="PageNewMembercardNotPrinted" xml:space="preserve">
+    <value>The card will be made later manually by an administrator.</value>
+  </data>
+  <data name="MessageZeroPayed" xml:space="preserve">
+    <value>Please enter a payment before submitting the ticket.</value>
+  </data>
+  <data name="PageReportMemberListDate" xml:space="preserve">
+    <value>Snapshot date:</value>
+  </data>
+  <data name="PageSettingsLanguage" xml:space="preserve">
+    <value>Language:</value>
+  </data>
+  <data name="ButtonRedoOrder" xml:space="preserve">
+    <value>Redo order</value>
+  </data>
+  <data name="PageNewMembercardMenuLostMembercard" xml:space="preserve">
+    <value>Lost membercard</value>
+  </data>
+  <data name="ExceptionGeneral" xml:space="preserve">
+    <value>An unexpected exception occured:</value>
+  </data>
+  <data name="PageConfigurationEditProductControlTitle" xml:space="preserve">
+    <value>EDIT PRODUCT</value>
+  </data>
+  <data name="PageConfigurationUserRightsControlFilter" xml:space="preserve">
+    <value>Filter</value>
+  </data>
+  <data name="ButtonRedoTransaction" xml:space="preserve">
+    <value>Redo transaction</value>
+  </data>
+  <data name="MessageDuplicateCardTitle" xml:space="preserve">
+    <value>NFC card already assigned</value>
+  </data>
+  <data name="PageConfigurationProductsCategoryConfirmDeletion" xml:space="preserve">
+    <value>Are you sure you want to delete the selected category?</value>
+  </data>
+  <data name="RadioButtonConfiguration" xml:space="preserve">
+    <value>CONFIG</value>
+  </data>
+  <data name="PageConfigurationProductsCategoryContainsProducts" xml:space="preserve">
+    <value>The selected category contains products. Are you sure you want to delete the category? All products whithin this category will be marked as invisible. You can add these later to another category.</value>
+  </data>
+  <data name="ButtonDeleteCategory" xml:space="preserve">
+    <value>Delete category</value>
+  </data>
+  <data name="PagePaymentTransactions" xml:space="preserve">
+    <value>Transactions</value>
+  </data>
+  <data name="PageReportsMemberListCardsControlTitle" xml:space="preserve">
+    <value>MEMBERCARDS PER USER</value>
+  </data>
+  <data name="ButtonConfirmPayment" xml:space="preserve">
+    <value>Confirm payment</value>
+  </data>
+  <data name="PageSettingsEmailToAddress" xml:space="preserve">
+    <value>E-mail to:</value>
+  </data>
+  <data name="PageNewMembercardMenuChangeMemberDetails" xml:space="preserve">
+    <value>Edit member</value>
+  </data>
+  <data name="PageNewMembercardPrintedQuestionTitle" xml:space="preserve">
+    <value>Card printed?</value>
+  </data>
+  <data name="MessageEmptyTicket" xml:space="preserve">
+    <value>It is not possible to create an empty ticket.</value>
+  </data>
+  <data name="ButtonDeleteOrder" xml:space="preserve">
+    <value>Delete order</value>
+  </data>
+  <data name="SplashScreenLoadingDb" xml:space="preserve">
+    <value>Loading database...</value>
+  </data>
+  <data name="PageSettingsDbPassword" xml:space="preserve">
+    <value>Database password:</value>
+  </data>
+  <data name="PageSettingsMemberCardValidityPeriod" xml:space="preserve">
+    <value>Membercard validity (days):</value>
+  </data>
+  <data name="PageSettingsMenuMembercardConfig" xml:space="preserve">
+    <value>Membercard settings</value>
+  </data>
+  <data name="ButtonCloseCheckoutSheet" xml:space="preserve">
+    <value>Close cash register</value>
+  </data>
+  <data name="PageNewMembercardPreview" xml:space="preserve">
+    <value>Preview</value>
+  </data>
+  <data name="RadioButtonSettings" xml:space="preserve">
+    <value>SETTINGS</value>
+  </data>
+  <data name="PagePaymentTotalReceived" xml:space="preserve">
+    <value>Total received</value>
+  </data>
+  <data name="ButtonCancel" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
+  <data name="PageNewMembercardUpdateSuccessTitle" xml:space="preserve">
+    <value>Success</value>
+  </data>
+  <data name="PagePaymentHouseTitle" xml:space="preserve">
+    <value>Free payment</value>
+  </data>
+  <data name="RadioButtonOpenDrawer" xml:space="preserve">
+    <value>OPEN DRAWER</value>
+  </data>
+  <data name="PageReportMemberExpired" xml:space="preserve">
+    <value>Expired members:</value>
+  </data>
+  <data name="PageSettingsEmailSmtpServer" xml:space="preserve">
+    <value>SMTP server:</value>
+  </data>
+  <data name="PageNewMembercardUpdateSuccess" xml:space="preserve">
+    <value>The changes are successfully applied.</value>
+  </data>
+  <data name="ButtonGoBack" xml:space="preserve">
+    <value>Back</value>
+  </data>
+  <data name="PageNewMembercardNotPrintedTitle" xml:space="preserve">
+    <value>Card will be made later.</value>
+  </data>
+  <data name="GenderMale" xml:space="preserve">
+    <value>Male</value>
+  </data>
+  <data name="PageNewMembercardScanNfcIdQuestionTitle" xml:space="preserve">
+    <value>Please scan the new NFC card</value>
+  </data>
+  <data name="PageNewMembercardFormCountry" xml:space="preserve">
+    <value>Country (ISO code):</value>
+  </data>
+  <data name="ButtonBrowse" xml:space="preserve">
+    <value>Browse...</value>
+  </data>
+  <data name="PageSettingsMenuApplicationConfig" xml:space="preserve">
+    <value>Application settings</value>
+  </data>
+  <data name="ControlTransactionDate" xml:space="preserve">
+    <value>Date</value>
+  </data>
+  <data name="ControlTransactionType" xml:space="preserve">
+    <value>Type</value>
+  </data>
+  <data name="PageLostMembercardTitle" xml:space="preserve">
+    <value>LOST MEMBERCARD</value>
+  </data>
+  <data name="PagePaymentTotalDue" xml:space="preserve">
+    <value>Total due</value>
+  </data>
+  <data name="LockScreenText" xml:space="preserve">
+    <value>Cash register locked, please put a smartcard on the reader.</value>
+  </data>
+  <data name="PagePaymentCoinTitle" xml:space="preserve">
+    <value>New coin payment</value>
+  </data>
+  <data name="PageConfigurationProductsProductConfirmDeletion" xml:space="preserve">
+    <value>Are you sure you want to delete the selected product?</value>
+  </data>
+  <data name="No" xml:space="preserve">
+    <value>No</value>
+  </data>
+  <data name="PageReportsNoMemberResults" xml:space="preserve">
+    <value>There are no members found with the applied filters.</value>
+  </data>
+  <data name="PageExistingMembercardTitle" xml:space="preserve">
+    <value>EXTEND EXISTING MEMBERSHIP</value>
+  </data>
+  <data name="PageSettingsMenuIOConfig" xml:space="preserve">
+    <value>Device settings</value>
+  </data>
+  <data name="ExceptionMembercardTitle" xml:space="preserve">
+    <value>Membercard creation problem</value>
+  </data>
+  <data name="ExceptionSerialTitle" xml:space="preserve">
+    <value>Serial port warning</value>
+  </data>
+  <data name="ValidationCategorytNameUnique" xml:space="preserve">
+    <value>A category with the same name already exists. Each category must have an unique name.</value>
+  </data>
+  <data name="PageSettingsIOTitle" xml:space="preserve">
+    <value>DEVICE SETTINGS</value>
+  </data>
+  <data name="PageConfigurationAddProductControlFormProductName" xml:space="preserve">
+    <value>Product name: </value>
+  </data>
+  <data name="PageReportsDailyTicketOverviewControlTitle" xml:space="preserve">
+    <value>DAILY TICKET OVERVIEW</value>
+  </data>
+  <data name="PageNewCheckoutSheetFormOpenTime" xml:space="preserve">
+    <value>Time:</value>
+  </data>
+  <data name="PageNewCheckoutSheetFormOpenedBy" xml:space="preserve">
+    <value>Opened by:</value>
+  </data>
+  <data name="PageReportsMenuTicketOverview" xml:space="preserve">
+    <value>Daily ticket overview</value>
+  </data>
+  <data name="Yes" xml:space="preserve">
+    <value>Yes</value>
+  </data>
+  <data name="ValidationProductNameUniqueTitle" xml:space="preserve">
+    <value>Validation warning</value>
+  </data>
+  <data name="PageReportsMenuMemberList" xml:space="preserve">
+    <value>Member list</value>
+  </data>
+  <data name="PdfMemberCardActiveMember" xml:space="preserve">
+    <value>Active member</value>
+  </data>
+  <data name="PageNewMembercardTitle" xml:space="preserve">
+    <value>CREATE MEMBERCARD</value>
+  </data>
+  <data name="PageConfigurationAddProductControlFormProductPrice" xml:space="preserve">
+    <value>Price:</value>
+  </data>
+  <data name="RadioButtonNewTicket" xml:space="preserve">
+    <value>NEW TICKET</value>
+  </data>
+  <data name="PageConfigurationAddProductControlFormProductCoins" xml:space="preserve">
+    <value>Coins:</value>
+  </data>
+  <data name="PageNewMembercardPrintActiveMemberTitle" xml:space="preserve">
+    <value>Active member created.</value>
+  </data>
+  <data name="PageConfigurationAddProductControlCreateProduct" xml:space="preserve">
+    <value>Create new product</value>
+  </data>
+  <data name="ButtonEditOrder" xml:space="preserve">
+    <value>Edit order</value>
+  </data>
+  <data name="GenderFemale" xml:space="preserve">
+    <value>Female</value>
+  </data>
+  <data name="ButtonReportGenerate" xml:space="preserve">
+    <value>Generate report</value>
+  </data>
+  <data name="PageNewMembercardSuccessTitle" xml:space="preserve">
+    <value>Membercard successfully created</value>
+  </data>
+  <data name="RadioButtonQuit" xml:space="preserve">
+    <value>QUIT</value>
+  </data>
+  <data name="Wildcard" xml:space="preserve">
+    <value>*</value>
+  </data>
+  <data name="PageNewMembercardSuccess" xml:space="preserve">
+    <value>The new membercard is successfully created.</value>
+  </data>
+  <data name="PageNewMembercardPrintUnprintedNFCCardsOverview" xml:space="preserve">
+    <value>Unprinted NFC card overview</value>
+  </data>
+  <data name="PageReportsNoMemberResultsTitle" xml:space="preserve">
+    <value>No members found</value>
+  </data>
+  <data name="ApplicationQuitDialogTitle" xml:space="preserve">
+    <value>Quit application</value>
+  </data>
+  <data name="PageReportsFilterResults" xml:space="preserve">
+    <value>Results</value>
+  </data>
+  <data name="PageConfigurationMenuProducts" xml:space="preserve">
+    <value>Configure Products</value>
+  </data>
+  <data name="PageConfigurationUserRightsControlRoles" xml:space="preserve">
+    <value>Roles</value>
+  </data>
+  <data name="PageConfigurationUserRightsControlTitle" xml:space="preserve">
+    <value>USER RIGHTS</value>
+  </data>
+  <data name="PageConfigurationUserRightsControlUsers" xml:space="preserve">
+    <value>Users</value>
+  </data>
+  <data name="PageConfigurationProductsCategoryConfirmDeletionTitle" xml:space="preserve">
+    <value>Confirm category removal</value>
+  </data>
+  <data name="PageReportsMemberListControlTitle" xml:space="preserve">
+    <value>MEMBER LIST</value>
+  </data>
+  <data name="ButtonHideProduct" xml:space="preserve">
+    <value>Hide product</value>
+  </data>
+  <data name="PageCloseCheckoutSheetTitle" xml:space="preserve">
+    <value>CLOSE CASH REGISTER</value>
+  </data>
+  <data name="PageNewMembercardFormZipcode" xml:space="preserve">
+    <value>Zipcode:</value>
+  </data>
+  <data name="ButtonConfigurationSave" xml:space="preserve">
+    <value>Save configuration</value>
+  </data>
+  <data name="ExceptionSerial" xml:space="preserve">
+    <value>Could not open serial port. Please change the serial port in the settings menu.</value>
+  </data>
+  <data name="ApplicationQuitDialog" xml:space="preserve">
+    <value>Are you sure you want to quit?</value>
+  </data>
+  <data name="PageNewCheckoutSheetFormOpenAmount" xml:space="preserve">
+    <value>Amount of cash (EUR)</value>
+  </data>
+  <data name="PageNewMembercardMembershipExtension" xml:space="preserve">
+    <value>The membercard will be extended for 1 year because the user already has an active NFC membercard.</value>
+  </data>
+  <data name="ExceptionFileNotFoundTitle" xml:space="preserve">
+    <value>File not found</value>
+  </data>
+  <data name="ValidationCategoryNameUniqueTitle" xml:space="preserve">
+    <value>Validation warning</value>
+  </data>
+  <data name="PageSettingsIoSerialPortDrawer" xml:space="preserve">
+    <value>Cash drawer serial port:</value>
+  </data>
+  <data name="ButtonMemberPrintSave" xml:space="preserve">
+    <value>Print card / save member</value>
+  </data>
+  <data name="MailCheckoutSheetSubject" xml:space="preserve">
+    <value>Cash register: new checkout sheet</value>
+  </data>
+  <data name="PageConfigurationAddCategoryControlTitle" xml:space="preserve">
+    <value>ADD CATEGORY</value>
+  </data>
+  <data name="PageSettingsNewPasswordNote" xml:space="preserve">
+    <value>NOTE: Type password to change the stored password.</value>
+  </data>
+  <data name="PageNewMembercardCardLostNonActive" xml:space="preserve">
+    <value>Please use the "extend" membercard feature to create a normal card.</value>
+  </data>
+  <data name="PageNewMembercardMenuPrintUnprintedNFCCards" xml:space="preserve">
+    <value>Print unprinted NFC cards</value>
+  </data>
+  <data name="PageSettingsMembercardTitle" xml:space="preserve">
+    <value>MEMBERCARD SETTINGS</value>
+  </data>
+  <data name="PageSettingsDbCatalog" xml:space="preserve">
+    <value>Database catalog:</value>
+  </data>
+  <data name="PageConfigurationProductsProductConfirmDeletionTitle" xml:space="preserve">
+    <value>Confirm product removal</value>
+  </data>
+  <data name="PageNewMembercardPrintUnprintedNFCCardsTitle" xml:space="preserve">
+    <value>PRINT UNPRINTED NFC CARDS</value>
+  </data>
+  <data name="PageReportDate" xml:space="preserve">
+    <value>Closure date:</value>
+  </data>
+  <data name="PagePaymentCashTitle" xml:space="preserve">
+    <value>New cash payment</value>
+  </data>
+  <data name="ButtonConfirmTicket" xml:space="preserve">
+    <value>Confirm ticket</value>
+  </data>
+  <data name="ApplicationAlreadyRunning" xml:space="preserve">
+    <value>Tjok POS System is already running.</value>
+  </data>
+  <data name="PageNewMembercardPrintActiveMember" xml:space="preserve">
+    <value>The card will be printed later because an active member was created. These members need a special NFC/RFID card.</value>
+  </data>
+  <data name="PageNewMembercardFormFirstName" xml:space="preserve">
+    <value>First name:</value>
+  </data>
+  <data name="PageNewMembercardCardLostNonActiveTitle" xml:space="preserve">
+    <value>Lost non-NFC card</value>
+  </data>
+  <data name="PageNewMembercardScanNfcIdQuestion" xml:space="preserve">
+    <value>Please put the newly printed NFC card on the NFC reader. Click OK to proceed.</value>
+  </data>
+  <data name="PagePaymentTotalRemaining" xml:space="preserve">
+    <value>Total remaining</value>
+  </data>
+  <data name="ButtonEditProduct" xml:space="preserve">
+    <value>Edit product</value>
+  </data>
+  <data name="ApplicationAlreadyRunningTitle" xml:space="preserve">
+    <value>Tjok POS System</value>
+  </data>
+  <data name="ControlTransactionAmount" xml:space="preserve">
+    <value>Amount</value>
+  </data>
+  <data name="RadioButtonNewMembercard" xml:space="preserve">
+    <value>NEW MEMBERCARD</value>
+  </data>
+  <data name="ExceptionGeneralTitle" xml:space="preserve">
+    <value>Unexpected exception</value>
+  </data>
+  <data name="ExceptionMembercard" xml:space="preserve">
+    <value>There was an error while creating the membercard. Please check the logs for more info.</value>
+  </data>
+  <data name="PageConfigurationAddProductControlTitle" xml:space="preserve">
+    <value>ADD PRODUCT</value>
+  </data>
+  <data name="ValidationGeneral" xml:space="preserve">
+    <value>All marked fields need to be filled in.</value>
+  </data>
+  <data name="MessageDuplicateCard" xml:space="preserve">
+    <value>The scanned NFC card is already assigned to another member.</value>
+  </data>
+  <data name="PageConfigurationAddCategoryControlFormCategoryName" xml:space="preserve">
+    <value>Category name: </value>
+  </data>
+  <data name="PageNewMembercardMenuNew" xml:space="preserve">
+    <value>New member</value>
+  </data>
+  <data name="ValidationGeneralTitle" xml:space="preserve">
+    <value>Validation warning</value>
+  </data>
+  <data name="PageCloseCheckoutSheetFormComments" xml:space="preserve">
+    <value>Comments:</value>
+  </data>
+  <data name="PageCloseCheckoutSheetFormCloseTime" xml:space="preserve">
+    <value>Closure time:</value>
+  </data>
+  <data name="PageNewMembercardMembershipExtensionTitle" xml:space="preserve">
+    <value>Membercard will be extended</value>
+  </data>
+  <data name="PageSettingsDbUsername" xml:space="preserve">
+    <value>Database username</value>
+  </data>
+  <data name="PageNewMembercardFormPhone" xml:space="preserve">
+    <value>Phone number:</value>
+  </data>
+  <data name="WindowMainCurrentUser" xml:space="preserve">
+    <value>User</value>
+  </data>
+  <data name="PageSettingsEmailFromName" xml:space="preserve">
+    <value>E-mail sender name:</value>
+  </data>
+  <data name="PageNewMembercardFormEmail" xml:space="preserve">
+    <value>E-mail address:</value>
+  </data>
+  <data name="PageMembercardChangeMemberDetailsTitle" xml:space="preserve">
+    <value>EDIT MEMBER</value>
+  </data>
+  <data name="ValidationProductNameUnique" xml:space="preserve">
+    <value>A product with the same name already exists. Each product must have an unique name.</value>
+  </data>
+  <data name="PageCloseCheckoutSheetFormClosedBy" xml:space="preserve">
+    <value>Closed by:</value>
+  </data>
+  <data name="ButtonDeleteItem" xml:space="preserve">
+    <value>Delete item</value>
+  </data>
+  <data name="ExceptionDbWarningTitle" xml:space="preserve">
+    <value>Database fault</value>
+  </data>
+  <data name="PageReportsDailyOverviewControlTitle" xml:space="preserve">
+    <value>DAILY OVERVIEW</value>
+  </data>
+  <data name="PageNewMembercardMenuPrintUnprintedNormalCards" xml:space="preserve">
+    <value>Print unprinted normal cards</value>
+  </data>
+  <data name="PageConfigurationProductsProductConfirmHide" xml:space="preserve">
+    <value>Are you sure you want to hide the selected product? You can unhide this product later.</value>
+  </data>
+  <data name="ButtonCancelPayment" xml:space="preserve">
+    <value>Cancel payment</value>
+  </data>
+  <data name="PageConfigurationProductsTitle" xml:space="preserve">
+    <value>PRODUCT CONFIGURATION</value>
+  </data>
+  <data name="PageReportMember" xml:space="preserve">
+    <value>Member name:</value>
+  </data>
+  <data name="PageConfigurationMenuUserRights" xml:space="preserve">
+    <value>User rights</value>
+  </data>
+  <data name="PageNewMembercardFormActiveMember" xml:space="preserve">
+    <value>Active member: </value>
+  </data>
+</root>
