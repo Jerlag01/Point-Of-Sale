@@ -658,7 +658,7 @@
     <value>Confirm ticket</value>
   </data>
   <data name="ApplicationAlreadyRunning" xml:space="preserve">
-    <value>Tjok POS System is already running.</value>
+    <value>POS System is already running.</value>
   </data>
   <data name="PageNewMembercardPrintActiveMember" xml:space="preserve">
     <value>The card will be printed later because an active member was created. These members need a special NFC/RFID card.</value>
@@ -679,7 +679,7 @@
     <value>Edit product</value>
   </data>
   <data name="ApplicationAlreadyRunningTitle" xml:space="preserve">
-    <value>Tjok POS System</value>
+    <value>POS System</value>
   </data>
   <data name="ControlTransactionAmount" xml:space="preserve">
     <value>Amount</value>

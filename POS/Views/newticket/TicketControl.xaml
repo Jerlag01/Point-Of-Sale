@@ -1,0 +1,121 @@
+﻿<UserControl x:Class="Pos.Views.NewTicket.TicketControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:viewModels="clr-namespace:Pos.ViewModels"
+             xmlns:newTicketViews="clr-namespace:Pos.Views.NewTicket"
+             xmlns:microMvvm="clr-namespace:Util.MicroMvvm;assembly=Util">
+    <Button Command="{Binding TicketControlClicked}" CommandParameter="{Binding}">
+        <Control.Template>
+            <ControlTemplate>
+                <Border BorderThickness="3" BorderBrush="#FF476A87" Margin="4,4,4,4" Visibility="{Binding Visibility}">
+                    <FrameworkElement.Style>
+                        <Style TargetType="{x:Type Border}">
+                            <Style.Triggers>
+                                <DataTrigger Binding="{Binding NewTicket}" Value="True">
+                                    <Setter Property="Border.Background" Value="#FF00AEFF"/>
+                                </DataTrigger>
+                                <DataTrigger Binding="{Binding NewTicket}" Value="False">
+                                    <Setter Property="Border.Background" Value="#FFD0EAFF"/>
+                                </DataTrigger>
+                            </Style.Triggers>
+                        </Style>
+                    </FrameworkElement.Style>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="100"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="40"/>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition MinHeight="40"/>
+                        </Grid.RowDefinitions>
+                        <TextBlock Grid.Column="0" Grid.Row="0" Style="{StaticResource TicketText}" Margin="8,0"
+                       Text="{Binding Ticket.CreatedBy.Fullname}"/>
+                        <TextBlock Grid.Column="1" Grid.Row="0" Style="{StaticResource TicketText}" HorizontalAlignment="Right"
+                       Margin="8,0" Text="{Binding Ticket.CreationTime, StringFormat=HH:mm}"/>
+                        <Border Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="2" BorderThickness="0,1,0,1" BorderBrush="Black">
+                            <ListBox Background="Transparent" BorderBrush="Transparent" BorderThickness="0"
+                       HorizontalContentAlignment="Stretch"
+                       microMvvm:SelectionBehavior.SelectionChanged="{Binding ItemSelectedCommand}"
+                       SelectedItem="{Binding SelectedTicketLine, Mode=TwoWay}" ItemsSource="{Binding Ticket.TicketLines}">
+                                <ItemsControl.ItemContainerStyle>
+                                    <Style TargetType="{x:Type ListBoxItem}">
+                                        <Setter Property="UIElement.Focusable"
+                            Value="{Binding DataContext.NewTicket, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type newTicketViews:TicketControl}}}"/>
+                                        <Style.Triggers>
+                                            <Trigger Property="ListBoxItem.IsSelected" Value="true">
+                                                <Setter Property="Control.FontWeight" Value="Bold"/>
+                                                <Setter Property="Control.Foreground" Value="White"/>
+                                            </Trigger>
+                                        </Style.Triggers>
+                                        <Style.Resources>
+                                            <SolidColorBrush x:Key="{x:Static SystemColors.HighlightBrushKey}" Color="#FF133455"/>
+                                            <SolidColorBrush x:Key="{x:Static SystemColors.InactiveSelectionHighlightBrushKey}" Color="#FF133455"/>
+                                        </Style.Resources>
+                                    </Style>
+                                </ItemsControl.ItemContainerStyle>
+                                <ItemsControl.ItemTemplate>
+                                    <DataTemplate>
+                                        <Grid Margin="0,8">
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="*"/>
+                                                <ColumnDefinition Width="100"/>
+                                            </Grid.ColumnDefinitions>
+                                            <TextBlock Grid.Column="0" FontSize="16" Margin="4,0">
+                                                <TextBlock.Text>
+                                                    <MultiBinding StringFormat="{0}x {1}">
+                                                        <Binding Path="Amount"/>
+                                                        <Binding Path="Product.Name"/>
+                                                    </MultiBinding>
+                                                </TextBlock.Text>
+                                            </TextBlock>
+                                            <TextBlock Grid.Column="1" FontSize="16" Margin="8,0" TextAlignment="Right"
+                                 Text="{Binding LinePriceIncl, StringFormat={0:C}}"/>
+                                        </Grid>
+                                    </DataTemplate>
+                                </ItemsControl.ItemTemplate>
+                            </ListBox>
+                        </Border>
+                        <StackPanel Grid.Column="0" Grid.Row="2" Orientation="Horizontal">
+                            <Button Margin="4,4,2,4" Width="60" Command="{Binding PlusCommand}">
+                                <FrameworkElement.Style>
+                                    <Style TargetType="{x:Type Button}" BasedOn="{StaticResource OrangeButton}">
+                                        <Style.Triggers>
+                                            <DataTrigger Binding="{Binding EditMode}" Value="True">
+                                                <Setter Property="UIElement.Visibility" Value="Visible"/>
+                                            </DataTrigger>
+                                            <DataTrigger Binding="{Binding EditMode}" Value="False">
+                                                <Setter Property="UIElement.Visibility" Value="Collapsed"/>
+                                            </DataTrigger>
+                                        </Style.Triggers>
+                                    </Style>
+                                </FrameworkElement.Style>
+                                <Image Height="35" Width="35" Margin="10" Source="../../Resources/plus.png"/>
+                            </Button>
+                            <Button Margin="2,4,4,4" Width="55" Command="{Binding MinusCommand}">
+                                <FrameworkElement.Style>
+                                    <Style TargetType="{x:Type Button}" BasedOn="{StaticResource RedButton}">
+                                        <Style.Triggers>
+                                            <DataTrigger Binding="{Binding EditMode}" Value="True">
+                                                <Setter Property="UIElement.Visibility" Value="Visible"/>
+                                            </DataTrigger>
+                                            <DataTrigger Binding="{Binding EditMode}" Value="False">
+                                                <Setter Property="UIElement.Visibility" Value="Collapsed"/>
+                                            </DataTrigger>
+                                        </Style.Triggers>
+                                    </Style>
+                                </FrameworkElement.Style>
+                                <Image Height="35" Width="35" Margin="10" Source="../../Resources/minus.png"/>
+                            </Button>
+                        </StackPanel>
+                        <TextBlock Grid.Column="1" Grid.Row="2" Style="{StaticResource TicketText}" HorizontalAlignment="Right"
+                       Margin="8,0" Text="{Binding Ticket.TotalPrice, StringFormat={0:C}}"/>
+                    </Grid>
+                </Border>
+            </ControlTemplate>
+        </Control.Template>
+    </Button>
+</UserControl>

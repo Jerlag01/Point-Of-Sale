@@ -1,0 +1,88 @@
+﻿<UserControl x:Class="Pos.Views.NewTicket.PaymentByCoinControlView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:viewModels="clr-namespace:Pos.ViewModels"
+             xmlns:customControls="clr-namespace:Pos.Views.CustomControls"
+             xmlns:p="clr-namespace:Pos.Properties"
+             xmlns:microMvvm="clr-namespace:Util.MicroMvvm;assembly=Util">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="35"/>
+            <RowDefinition Height="110"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <TextBlock Grid.Row="0" Style="{StaticResource WhiteText}" FontSize="22" FontWeight="Bold"
+               Text="{x:Static p:Resources.PagePaymentCoinTitle}"/>
+        <Grid Row="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="37*"/>
+                <RowDefinition Height="36*"/>
+                <RowDefinition Height="37"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="180"/>
+                <ColumnDefinition Width="80"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <TextBlock Grid.Column="0" Grid.Row="0" Style="{StaticResource WhiteText}" FontWeight="Bold"
+                 Text="{x:Static p:Resources.PagePaymentTotalDue}"/>
+            <TextBlock Grid.Column="1" Grid.Row="0" Style="{StaticResource WhiteText}" FontWeight="Bold"
+                 TextAlignment="Right" Text="{Binding NewTransaction.Transaction.Amount}"/>
+            <TextBlock Grid.Column="0" Grid.Row="1" Style="{StaticResource WhiteText}"
+                 Text="{x:Static p:Resources.PagePaymentTotalReceived}"/>
+            <TextBlock Grid.Column="1" Grid.Row="1" Style="{StaticResource WhiteText}" TextAlignment="Right"
+                 Text="{Binding NewCoinTransaction.CoinsReceived}"/>
+        </Grid>
+        <Grid Row="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="400"/>
+                <ColumnDefinition Width="320"/>
+            </Grid.ColumnDefinitions>
+            <customControls:TouchMoneyKeypadControl Grid.Column="0" HorizontalAlignment="Left" EnableDecimalEntry="false"
+                                              EntryEnteredCommand="{Binding CoinKeyPadEnterCommand}"
+                                              KeypadEntry="{Binding KeypadEntry, Mode=TwoWay}"/>
+            <ListBox SelectionMode="Multiple" Grid.Column="1" Background="Transparent" BorderBrush="Transparent"
+               Foreground="White" BorderThickness="0" HorizontalContentAlignment="Stretch"
+               microMvvm:SelectionBehavior.SelectionChanged="{Binding SelectedItemsCoinPaymentChanged}"
+               ItemsSource="{Binding TicketProducts}">
+                <microMvvm:MultiSelectorBehaviours.SynchronizedSelectedItems>
+                    <Binding Mode="TwoWay">
+                        <!-- constructor argument:
+                 SelectedItemsCoinPayment
+            -->
+
+                    </Binding>
+                </microMvvm:MultiSelectorBehaviours.SynchronizedSelectedItems>
+                <ItemsControl.ItemContainerStyle>
+                    <Style TargetType="{x:Type ListBoxItem}">
+                        <Style.Triggers>
+                            <Trigger Property="ListBoxItem.IsSelected" Value="true">
+                                <Setter Property="Control.FontWeight" Value="Bold"/>
+                                <Setter Property="Control.Foreground" Value="Black"/>
+                            </Trigger>
+                        </Style.Triggers>
+                        <Style.Resources>
+                            <SolidColorBrush x:Key="{x:Static SystemColors.HighlightBrushKey}" Color="White"/>
+                            <SolidColorBrush x:Key="{x:Static SystemColors.InactiveSelectionHighlightBrushKey}" Color="White"/>
+                        </Style.Resources>
+                    </Style>
+                </ItemsControl.ItemContainerStyle>
+                <ItemsControl.ItemTemplate>
+                    <DataTemplate>
+                        <Grid Margin="0,8">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="100"/>
+                            </Grid.ColumnDefinitions>
+                            <TextBlock Grid.Column="0" FontSize="20" Margin="5,0" Text="{Binding Name}"/>
+                            <TextBlock Grid.Column="1" FontSize="20" Margin="8,0" TextAlignment="Right"
+                         Text="{Binding PriceCoin, StringFormat='{0} Coins'}"/>
+                        </Grid>
+                    </DataTemplate>
+                </ItemsControl.ItemTemplate>
+            </ListBox>
+        </Grid>
+    </Grid>
+</UserControl>

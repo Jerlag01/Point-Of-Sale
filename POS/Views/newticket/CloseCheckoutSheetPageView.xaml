@@ -1,0 +1,300 @@
+﻿<Page x:Class="Pos.Views.NewTicket.CloseCheckoutSheetPageView"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      xmlns:p="clr-namespace:Pos.Properties"
+      xmlns:viewModels="clr-namespace:Pos.ViewModels"
+      xmlns:customControls="clr-namespace:Pos.Views.CustomControls"
+      Title="POS System" KeepAlive="false">
+    <FrameworkElement.DataContext>
+        <viewModels:CheckoutSheetViewModel/>
+    </FrameworkElement.DataContext>
+    <Grid x:Name="BaseRowsGrid">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="140"/>
+        </Grid.RowDefinitions>
+        <Grid x:Name="ContentRowGrid" Row="0" ColumnSpan="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="3*"/>
+                <ColumnDefinition Width="8*"/>
+            </Grid.ColumnDefinitions>
+            <Border Grid.Column="0" Background="White" Margin="4,4,4,4"/>
+            <Grid Column="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="50"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <TextBlock Grid.Row="0" Style="{StaticResource WhiteText}" FontSize="30" FontWeight="Bold"
+                   Text="{x:Static p:Resources.PageCloseCheckoutSheetTitle}"/>
+                <ScrollViewer Grid.Row="1" PanningMode="VerticalOnly">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="35"/>
+                            <RowDefinition Height="35"/>
+                            <RowDefinition Height="100"/>
+                            <RowDefinition Height="10"/>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="10"/>
+                            <RowDefinition Height="35"/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="195"/>
+                            <ColumnDefinition Width="260"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <TextBlock Grid.Column="0" Grid.Row="0" Style="{StaticResource WhiteText}"
+                       Text="{x:Static p:Resources.PageCloseCheckoutSheetFormCloseTime}"/>
+                        <TextBox Grid.Column="1" Grid.Row="0" Style="{StaticResource DarkTextBox}" IsReadOnly="true"
+                     Text="{Binding CheckoutSheet.CloseTime}"/>
+                        <TextBlock Grid.Column="0" Grid.Row="1" Style="{StaticResource WhiteText}"
+                       Text="{x:Static p:Resources.PageCloseCheckoutSheetFormClosedBy}"/>
+                        <TextBox Grid.Column="1" Grid.Row="1" Style="{StaticResource DarkTextBox}" IsReadOnly="true"
+                     Text="{Binding CheckoutSheet.ClosedBy.Fullname, Mode=OneWay}"/>
+                        <TextBlock Grid.Column="0" Grid.Row="2" Style="{StaticResource WhiteText}"
+                       Text="{x:Static p:Resources.PageCloseCheckoutSheetFormComments}"/>
+                        <TextBox Grid.Column="1" Grid.Row="2" Style="{StaticResource DarkTextBox}" TextWrapping="Wrap"
+                     AcceptsReturn="true" Text="{Binding CheckoutSheet.Comments}"/>
+                        <Grid Row="4" Column="0" ColumnSpan="3">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="50"/>
+                                <RowDefinition Height="50"/>
+                                <RowDefinition Height="50"/>
+                                <RowDefinition Height="50"/>
+                                <RowDefinition Height="50"/>
+                                <RowDefinition Height="50"/>
+                                <RowDefinition Height="50"/>
+                                <RowDefinition Height="50"/>
+                                <RowDefinition Height="50"/>
+                                <RowDefinition Height="50"/>
+                                <RowDefinition Height="50"/>
+                                <RowDefinition Height="50"/>
+                                <RowDefinition Height="50"/>
+                                <RowDefinition Height="50"/>
+                                <RowDefinition Height="50"/>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="120"/>
+                                <ColumnDefinition Width="40"/>
+                                <ColumnDefinition Width="100"/>
+                                <ColumnDefinition Width="40"/>
+                                <ColumnDefinition Width="200"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <Image Grid.Row="0" Grid.Column="0" Margin="1" Source="../../Resources/euro500.jpg"/>
+                            <TextBlock Grid.Row="0" Grid.Column="1" Text="X" FontSize="30" Foreground="White" FontWeight="Bold"
+                         HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                            <TextBox Grid.Row="0" Grid.Column="2" Style="{StaticResource DarkTextBox}" VerticalContentAlignment="Center"
+                       Text="{Binding CheckoutSheet.CloseEur500, UpdateSourceTrigger=PropertyChanged}"/>
+                            <TextBlock Grid.Row="0" Grid.Column="3" Text="=" FontSize="30" Foreground="White" FontWeight="Bold"
+                         HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                            <TextBox Grid.Row="0" Grid.Column="4" Style="{StaticResource DarkTextBox}" VerticalContentAlignment="Center"
+                       IsReadOnly="true" Text="{Binding SubTotalEur500, StringFormat=C}"/>
+                            <Image Grid.Row="1" Grid.Column="0" Margin="1" Source="../../Resources/euro200.jpg"/>
+                            <TextBlock Grid.Row="1" Grid.Column="1" Text="X" FontSize="30" Foreground="White" FontWeight="Bold"
+                         HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                            <TextBox Grid.Row="1" Grid.Column="2" Style="{StaticResource DarkTextBox}" VerticalContentAlignment="Center"
+                       Text="{Binding CheckoutSheet.CloseEur200, UpdateSourceTrigger=PropertyChanged}"/>
+                            <TextBlock Grid.Row="1" Grid.Column="3" Text="=" FontSize="30" Foreground="White" FontWeight="Bold"
+                         HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                            <TextBox Grid.Row="1" Grid.Column="4" Style="{StaticResource DarkTextBox}" VerticalContentAlignment="Center"
+                       IsReadOnly="true" Text="{Binding SubTotalEur200, StringFormat=C}"/>
+                            <Image Grid.Row="2" Grid.Column="0" Margin="1" Source="../../Resources/euro100.jpg"/>
+                            <TextBlock Grid.Row="2" Grid.Column="1" Text="X" FontSize="30" Foreground="White" FontWeight="Bold"
+                         HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                            <TextBox Grid.Row="2" Grid.Column="2" Style="{StaticResource DarkTextBox}" VerticalContentAlignment="Center"
+                       Text="{Binding CheckoutSheet.CloseEur100, UpdateSourceTrigger=PropertyChanged}"/>
+                            <TextBlock Grid.Row="2" Grid.Column="3" Text="=" FontSize="30" Foreground="White" FontWeight="Bold"
+                         HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                            <TextBox Grid.Row="2" Grid.Column="4" Style="{StaticResource DarkTextBox}" VerticalContentAlignment="Center"
+                       IsReadOnly="true" Text="{Binding SubTotalEur100, StringFormat=C}"/>
+                            <Image Grid.Row="3" Grid.Column="0" Margin="1" Source="../../Resources/euro50.jpg"/>
+                            <TextBlock Grid.Row="3" Grid.Column="1" Text="X" FontSize="30" Foreground="White" FontWeight="Bold"
+                         HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                            <TextBox Grid.Row="3" Grid.Column="2" Style="{StaticResource DarkTextBox}" VerticalContentAlignment="Center"
+                       Text="{Binding CheckoutSheet.CloseEur50, UpdateSourceTrigger=PropertyChanged}"/>
+                            <TextBlock Grid.Row="3" Grid.Column="3" Text="=" FontSize="30" Foreground="White" FontWeight="Bold"
+                         HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                            <TextBox Grid.Row="3" Grid.Column="4" Style="{StaticResource DarkTextBox}" VerticalContentAlignment="Center"
+                       IsReadOnly="true" Text="{Binding SubTotalEur50, StringFormat=C}"/>
+                            <Image Grid.Row="4" Grid.Column="0" Margin="1" Source="../../Resources/euro20.jpg"/>
+                            <TextBlock Grid.Row="4" Grid.Column="1" Text="X" FontSize="30" Foreground="White" FontWeight="Bold"
+                         HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                            <TextBox Grid.Row="4" Grid.Column="2" Style="{StaticResource DarkTextBox}" VerticalContentAlignment="Center"
+                       Text="{Binding CheckoutSheet.CloseEur20, UpdateSourceTrigger=PropertyChanged}"/>
+                            <TextBlock Grid.Row="4" Grid.Column="3" Text="=" FontSize="30" Foreground="White" FontWeight="Bold"
+                         HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                            <TextBox Grid.Row="4" Grid.Column="4" Style="{StaticResource DarkTextBox}" VerticalContentAlignment="Center"
+                       IsReadOnly="true" Text="{Binding SubTotalEur20, StringFormat=C}"/>
+                            <Image Grid.Row="5" Grid.Column="0" Margin="1" Source="../../Resources/euro10.jpg"/>
+                            <TextBlock Grid.Row="5" Grid.Column="1" Text="X" FontSize="30" Foreground="White" FontWeight="Bold"
+                         HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                            <TextBox Grid.Row="5" Grid.Column="2" Style="{StaticResource DarkTextBox}" VerticalContentAlignment="Center"
+                       Text="{Binding CheckoutSheet.CloseEur10, UpdateSourceTrigger=PropertyChanged}"/>
+                            <TextBlock Grid.Row="5" Grid.Column="3" Text="=" FontSize="30" Foreground="White" FontWeight="Bold"
+                         HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                            <TextBox Grid.Row="5" Grid.Column="4" Style="{StaticResource DarkTextBox}" VerticalContentAlignment="Center"
+                       IsReadOnly="true" Text="{Binding SubTotalEur10, StringFormat=C}"/>
+                            <Image Grid.Row="6" Grid.Column="0" Margin="1" Source="../../Resources/euro5.jpg"/>
+                            <TextBlock Grid.Row="6" Grid.Column="1" Text="X" FontSize="30" Foreground="White" FontWeight="Bold"
+                         HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                            <TextBox Grid.Row="6" Grid.Column="2" Style="{StaticResource DarkTextBox}" VerticalContentAlignment="Center"
+                       Text="{Binding CheckoutSheet.CloseEur5, UpdateSourceTrigger=PropertyChanged}"/>
+                            <TextBlock Grid.Row="6" Grid.Column="3" Text="=" FontSize="30" Foreground="White" FontWeight="Bold"
+                         HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                            <TextBox Grid.Row="6" Grid.Column="4" Style="{StaticResource DarkTextBox}" VerticalContentAlignment="Center"
+                       IsReadOnly="true" Text="{Binding SubTotalEur5, StringFormat=C}"/>
+                            <Image Grid.Row="7" Grid.Column="0" Margin="1" Source="../../Resources/euro2.png"/>
+                            <TextBlock Grid.Row="7" Grid.Column="1" Text="X" FontSize="30" Foreground="White" FontWeight="Bold"
+                         HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                            <TextBox Grid.Row="7" Grid.Column="2" Style="{StaticResource DarkTextBox}" VerticalContentAlignment="Center"
+                       Text="{Binding CheckoutSheet.CloseEur2, UpdateSourceTrigger=PropertyChanged}"/>
+                            <TextBlock Grid.Row="7" Grid.Column="3" Text="=" FontSize="30" Foreground="White" FontWeight="Bold"
+                         HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                            <TextBox Grid.Row="7" Grid.Column="4" Style="{StaticResource DarkTextBox}" VerticalContentAlignment="Center"
+                       IsReadOnly="true" Text="{Binding SubTotalEur2, StringFormat=C}"/>
+                            <Image Grid.Row="8" Grid.Column="0" Margin="3" Source="../../Resources/euro1.png"/>
+                            <TextBlock Grid.Row="8" Grid.Column="1" Text="X" FontSize="30" Foreground="White" FontWeight="Bold"
+                         HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                            <TextBox Grid.Row="8" Grid.Column="2" Style="{StaticResource DarkTextBox}" VerticalContentAlignment="Center"
+                       Text="{Binding CheckoutSheet.CloseEur1, UpdateSourceTrigger=PropertyChanged}"/>
+                            <TextBlock Grid.Row="8" Grid.Column="3" Text="=" FontSize="30" Foreground="White" FontWeight="Bold"
+                         HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                            <TextBox Grid.Row="8" Grid.Column="4" Style="{StaticResource DarkTextBox}" VerticalContentAlignment="Center"
+                       IsReadOnly="true" Text="{Binding SubTotalEur1, StringFormat=C}"/>
+                            <Image Grid.Row="9" Grid.Column="0" Margin="1" Source="../../Resources/euro50c.png"/>
+                            <TextBlock Grid.Row="9" Grid.Column="1" Text="X" FontSize="30" Foreground="White" FontWeight="Bold"
+                         HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                            <TextBox Grid.Row="9" Grid.Column="2" Style="{StaticResource DarkTextBox}" VerticalContentAlignment="Center"
+                       Text="{Binding CheckoutSheet.CloseEur50c, UpdateSourceTrigger=PropertyChanged}"/>
+                            <TextBlock Grid.Row="9" Grid.Column="3" Text="=" FontSize="30" Foreground="White" FontWeight="Bold"
+                         HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                            <TextBox Grid.Row="09" Grid.Column="4" Style="{StaticResource DarkTextBox}"
+                       VerticalContentAlignment="Center" IsReadOnly="true" Text="{Binding SubTotalEur50c, StringFormat=C}"/>
+                            <Image Grid.Row="10" Grid.Column="0" Margin="3" Source="../../Resources/euro20c.png"/>
+                            <TextBlock Grid.Row="10" Grid.Column="1" Text="X" FontSize="30" Foreground="White" FontWeight="Bold"
+                         HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                            <TextBox Grid.Row="10" Grid.Column="2" Style="{StaticResource DarkTextBox}"
+                       VerticalContentAlignment="Center"
+                       Text="{Binding CheckoutSheet.CloseEur20c, UpdateSourceTrigger=PropertyChanged}"/>
+                            <TextBlock Grid.Row="10" Grid.Column="3" Text="=" FontSize="30" Foreground="White" FontWeight="Bold"
+                         HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                            <TextBox Grid.Row="10" Grid.Column="4" Style="{StaticResource DarkTextBox}"
+                       VerticalContentAlignment="Center" IsReadOnly="true" Text="{Binding SubTotalEur20c, StringFormat=C}"/>
+                            <Image Grid.Row="11" Grid.Column="0" Margin="5" Source="../../Resources/euro10c.png"/>
+                            <TextBlock Grid.Row="11" Grid.Column="1" Text="X" FontSize="30" Foreground="White" FontWeight="Bold"
+                         HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                            <TextBox Grid.Row="11" Grid.Column="2" Style="{StaticResource DarkTextBox}"
+                       VerticalContentAlignment="Center"
+                       Text="{Binding CheckoutSheet.CloseEur10c, UpdateSourceTrigger=PropertyChanged}"/>
+                            <TextBlock Grid.Row="11" Grid.Column="3" Text="=" FontSize="30" Foreground="White" FontWeight="Bold"
+                         HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                            <TextBox Grid.Row="11" Grid.Column="4" Style="{StaticResource DarkTextBox}"
+                       VerticalContentAlignment="Center" IsReadOnly="true" Text="{Binding SubTotalEur10c, StringFormat=C}"/>
+                            <Image Grid.Row="12" Grid.Column="0" Margin="1" Source="../../Resources/euro5c.png"/>
+                            <TextBlock Grid.Row="12" Grid.Column="1" Text="X" FontSize="30" Foreground="White" FontWeight="Bold"
+                         HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                            <TextBox Grid.Row="12" Grid.Column="2" Style="{StaticResource DarkTextBox}"
+                       VerticalContentAlignment="Center"
+                       Text="{Binding CheckoutSheet.CloseEur5c, UpdateSourceTrigger=PropertyChanged}"/>
+                            <TextBlock Grid.Row="12" Grid.Column="3" Text="=" FontSize="30" Foreground="White" FontWeight="Bold"
+                         HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                            <TextBox Grid.Row="12" Grid.Column="4" Style="{StaticResource DarkTextBox}"
+                       VerticalContentAlignment="Center" IsReadOnly="true" Text="{Binding SubTotalEur5c, StringFormat=C}"/>
+                            <Image Grid.Row="13" Grid.Column="0" Margin="3" Source="../../Resources/euro2c.png"/>
+                            <TextBlock Grid.Row="13" Grid.Column="1" Text="X" FontSize="30" Foreground="White" FontWeight="Bold"
+                         HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                            <TextBox Grid.Row="13" Grid.Column="2" Style="{StaticResource DarkTextBox}"
+                       VerticalContentAlignment="Center"
+                       Text="{Binding CheckoutSheet.CloseEur2c, UpdateSourceTrigger=PropertyChanged}"/>
+                            <TextBlock Grid.Row="13" Grid.Column="3" Text="=" FontSize="30" Foreground="White" FontWeight="Bold"
+                         HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                            <TextBox Grid.Row="13" Grid.Column="4" Style="{StaticResource DarkTextBox}"
+                       VerticalContentAlignment="Center" IsReadOnly="true" Text="{Binding SubTotalEur2c, StringFormat=C}"/>
+                            <Image Grid.Row="14" Grid.Column="0" Margin="5" Source="../../Resources/euro1c.png"/>
+                            <TextBlock Grid.Row="14" Grid.Column="1" Text="X" FontSize="30" Foreground="White" FontWeight="Bold"
+                         HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                            <TextBox Grid.Row="14" Grid.Column="2" Style="{StaticResource DarkTextBox}"
+                       VerticalContentAlignment="Center"
+                       Text="{Binding CheckoutSheet.CloseEur1c, UpdateSourceTrigger=PropertyChanged}"/>
+                            <TextBlock Grid.Row="14" Grid.Column="3" Text="=" FontSize="30" Foreground="White" FontWeight="Bold"
+                         HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                            <TextBox Grid.Row="14" Grid.Column="4" Style="{StaticResource DarkTextBox}"
+                       VerticalContentAlignment="Center" IsReadOnly="true" Text="{Binding SubTotalEur1c, StringFormat=C}"/>
+                        </Grid>
+                        <TextBlock Grid.Column="0" Grid.Row="6" Style="{StaticResource WhiteText}"
+                       Text="{x:Static p:Resources.PageCloseCheckoutSheetFormTotalAmount}"/>
+                        <TextBox Grid.Column="1" Grid.Row="6" Style="{StaticResource DarkTextBox}" IsReadOnly="true"
+                     Text="{Binding CheckoutSheet.CloseAmount, StringFormat=C}"/>
+                    </Grid>
+                </ScrollViewer>
+            </Grid>
+        </Grid>
+        <Grid x:Name="TouchMenuGrid" Row="1" ColumnSpan="2">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <customControls:TouchButtonControl Grid.Row="0" Grid.Column="0" Margin="4,4,4,4" ButtonStyle="{StaticResource BlueButton}"
+                                         IsEnabled="false"/>
+            <customControls:TouchButtonControl Grid.Row="1" Grid.Column="0" Margin="4,4,4,4" ButtonStyle="{StaticResource BlueButton}"
+                                         IsEnabled="false"/>
+            <customControls:TouchButtonControl Grid.Row="0" Grid.Column="1" Margin="4,4,4,4" ButtonStyle="{StaticResource BlueButton}"
+                                         IsEnabled="false"/>
+            <customControls:TouchButtonControl Grid.Row="1" Grid.Column="1" Margin="4,4,4,4" ButtonStyle="{StaticResource BlueButton}"
+                                         IsEnabled="false"/>
+            <customControls:TouchButtonControl Grid.Row="0" Grid.Column="2" Margin="4,4,4,4" ButtonStyle="{StaticResource BlueButton}"
+                                         IsEnabled="false"/>
+            <customControls:TouchButtonControl Grid.Row="1" Grid.Column="2" Margin="4,4,4,4" ButtonStyle="{StaticResource BlueButton}"
+                                         IsEnabled="false"/>
+            <customControls:TouchButtonControl Grid.Row="0" Grid.Column="3" Margin="4,4,4,4" ButtonStyle="{StaticResource OrangeButton}"
+                                         IsEnabled="false"/>
+            <customControls:TouchButtonControl Grid.Row="1" Grid.Column="3" Margin="4,4,4,4" ButtonStyle="{StaticResource OrangeButton}"
+                                         IsEnabled="false"/>
+            <customControls:TouchButtonControl Grid.Row="0" Grid.Column="4" Margin="4,4,4,4" ButtonStyle="{StaticResource OrangeButton}"
+                                         IsEnabled="false"/>
+            <customControls:TouchButtonControl Grid.Row="1" Grid.Column="4" Margin="4,4,4,4" ButtonStyle="{StaticResource OrangeButton}"
+                                         IsEnabled="false"/>
+            <customControls:TouchButtonControl Grid.Row="0" Grid.Column="5" Margin="4,4,4,4" ButtonStyle="{StaticResource OrangeButton}"
+                                         IsEnabled="false"/>
+            <customControls:TouchButtonControl Grid.Row="1" Grid.Column="5" Margin="4,4,4,4" ButtonStyle="{StaticResource OrangeButton}"
+                                         IsEnabled="false"/>
+            <Image Grid.Row="0" Grid.ColumnSpan="2" Grid.Column="6" Grid.RowSpan="2" VerticalAlignment="Top"
+             Margin="20" Source="../../Resources/logo_trans_white.png"/>
+            <Button Grid.Row="0" Grid.Column="8" Grid.RowSpan="2" Margin="4,4,4,4" Style="{StaticResource BlueButton}"
+              IsEnabled="false"/>
+            <Button Grid.Row="0" Grid.Column="9" Grid.RowSpan="2" Margin="4,4,4,4"
+              Style="{StaticResource OrangeButton}" Command="{Binding CloseCheckoutSheetCommand}">
+                <Grid>
+                    <Image HorizontalAlignment="Center" VerticalAlignment="Top" Height="50" Width="50" Margin="15"
+                 Source="../../Resources\save.png"/>
+                    <TextBlock TextWrapping="Wrap" HorizontalAlignment="Left" VerticalAlignment="Bottom" Padding="7" Width="90"
+                     Text="{x:Static p:Resources.ButtonCloseCheckoutSheet}"/>
+                </Grid>
+            </Button>
+            <Button Grid.Row="0" Grid.Column="10" Grid.RowSpan="2" Margin="4,4,4,4" Style="{StaticResource RedButton}"
+              Command="{Binding CancelCommand}">
+                <Grid>
+                    <Image HorizontalAlignment="Center" VerticalAlignment="top" Height="50" Width="50" Margin="15"
+                 Source="../../Resources\cancel.png"/>
+                    <TextBlock TextWrapping="Wrap" HorizontalAlignment="Left" VerticalAlignment="Bottom" Padding="7" Width="70"
+                     Text="{x:Static p:Resources.ButtonCancel}"/>
+                </Grid>
+            </Button>
+        </Grid>
+    </Grid>
+</Page>

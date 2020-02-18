@@ -1,10 +1,4 @@
-﻿// Decompiled with JetBrains decompiler
-// Type: Tjok.Pos.ViewModels.ConfigurationViewModel
-// Assembly: Tjok.Pos, Version=1.1.0.0, Culture=neutral, PublicKeyToken=null
-// MVID: 43E441DF-D6D1-4015-9AD5-20E2185C44FE
-// Assembly location: D:\lagae\Documents\POS Tjok\SDP Technologies\Kassasysteem\Tjok.Pos.exe
-
-using Microsoft.Win32;
+﻿using Microsoft.Win32;
 using NLog;
 using System;
 using System.Collections.Generic;

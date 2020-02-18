@@ -14,6 +14,7 @@ using Dal.Model;
 using ZXing;
 using ZXing.QrCode;
 using ZXing.QrCode.Internal;
+using System.Windows;
 
 namespace Pos.Services
 {
