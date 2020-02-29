@@ -12,7 +12,7 @@ namespace Dal.Migrations
         {
             this.AutomaticMigrationsEnabled = true;
             this.AutomaticMigrationDataLossAllowed = true;
-            this.ContextKey = "Dal.EfDbContext";
+            this.ContextKey = "POS.Dal.EfDbContext";
         }
 
         protected override void Seed(DbContext context)
